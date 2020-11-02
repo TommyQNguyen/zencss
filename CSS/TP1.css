@@ -1,0 +1,445 @@
+/* Declarer des variables en CSS */
+:root {
+  --body-padding: 0 5vw;
+  --light-gray: #7c606b;
+  --spacing-s: 10px;
+  --spacing-m: 16px;
+  --spacing-l: 20px;
+  --spacing-xl: 50px;
+}
+
+/* Les differents font-family que j'emprunte de Google */
+@font-face {
+  font-family: myFirstFont;
+  src: url("../fonts/Nunito/Nunito-Regular.ttf");
+}
+
+@font-face {
+  font-family: homemadeApple;
+  src: url("../fonts/Homemade_Apple/HomemadeApple-Regular.ttf");
+}
+
+@font-face {
+    font-family: indieFlower;
+    src: url("../fonts/Indie_Flower/IndieFlower-Regular.ttf");
+  }
+
+@font-face {
+  font-family: kanjiNoto;
+  src: url("../fonts/Noto_Serif_JP/NotoSerifJP-Regular.otf");
+}
+
+body {
+  font-family: myFirstFont;
+  background-color: #eed5c2;
+}
+
+/* Pour enlever les espaces par defauts dans les pages */
+body,
+html {
+  padding: 0px;
+  margin: 0px;
+}
+
+header h1 {
+  font-family: kanjiNoto;
+}
+
+/* La couleur des paragraphes et en mode justifie */
+.preamble p,
+.explanation p,
+.participation p,
+.benefits p,
+.requirements p {
+  text-align: justify;
+  color: var(--light-gray);
+}
+
+#zen-summary > p:nth-child(2) > a {
+  text-transform: uppercase;
+}
+
+#zen-preamble {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* J'ai eu recours a la documentation de Mozilla pour les ::after */
+/* https://developer.mozilla.org/fr/docs/Web/CSS/::after */
+#zen-explanation::after {
+  background-image: url("/images/marc-omas-_wDGynpNq7g-unsplash.jpg");
+  background-size: 100vw auto;
+  display: flex;
+  width: 89vw;
+  height: 200px;
+  border-radius: var(--spacing-s);
+  content: "";
+}
+
+#zen-participation::after {
+  background-image: url("/images/xiao-zijin-i2TuYxNHTGY-unsplash.jpg");
+  background-size: 100vw auto;
+  display: flex;
+  width: 89vw;
+  height: 200px;
+  border-radius: var(--spacing-s);
+  content: "";
+}
+
+#zen-benefits::after {
+  background-image: url("/images/brett-carey-Lcs_1mqHC1w-unsplash.jpg");
+  background-size: 100vw auto;
+  display: flex;
+  width: 89vw;
+  height: 200px;
+  border-radius: var(--spacing-s);
+  content: "";
+}
+
+.wrapper ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.wrapper a:link {
+  margin-top: 6px;
+}
+
+.wrapper a:hover {
+  color: black;
+}
+
+.wrapper .designer-name {
+  color: rgb(209, 75, 158);
+}
+
+.wrapper .design-name {
+  color: #f2edef;
+}
+
+a:link {
+  color: rgb(209, 75, 158);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: rgb(209, 75, 158);
+}
+
+a:hover {
+  color: whitesmoke;
+}
+
+/* A partir d'ici, c'est le CSS pour les telephones intelligents */
+@media screen and (max-width: 640px) {
+
+
+  nav[role="navigation"] ul {
+    list-style-type: none;
+  }
+
+  header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: whitesmoke;
+      background-color: wheat;
+      background-image: radial-gradient(#eda4bd, #c46bae);
+      text-align: center;
+  }
+
+  header h1 {
+    font-size: 40px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  header h2 {
+    font-size: 30px;
+    padding-top: 22px;
+    margin-top: 0px;
+  }
+
+  #zen-summary > p:nth-child(2) > a {
+    text-transform: uppercase;
+  }
+
+  #zen-preamble::before {
+    background-image: url("/images/masaaki-komori-_SbeCWYjwCQ-unsplash.jpg");
+    background-size: 100vw auto;
+    display: flex;
+    justify-content: center;
+    width: 90vw;
+    height: 200px;
+    margin-left: var(--spacing-l);
+    content: "";
+  }
+
+  /* Utilisation de la propriete CSS Position */
+  #zen-explanation::after, #zen-participation::after, #zen-benefits::after {
+    position: relative;
+    left: 27px;
+  }
+
+  .summary {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  footer,
+  .preamble h3,
+  .explanation h3,
+  .participation h3,
+  .benefits h3,
+  .requirements h3,
+  h3.select,
+  h3.archives,
+  h3.resources {
+    text-align: center;
+    color: #c46bae;
+    margin-top: var(--spacing-xl);
+  }
+
+  .summary p,
+  .preamble p,
+  .explanation p,
+  .participation p,
+  .benefits p,
+  .requirements p {
+    text-align: justify;
+    color: var(--light-gray);
+    margin-left: var(--spacing-md);
+    margin-right: var(--spacing-md);
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: var(--spacing-xl);
+  }
+
+  .select {
+    padding-top: 30px;
+  }
+
+  #design-selection > nav:nth-child(2) > ul:nth-child(1) {
+    padding-left: 0px;
+    text-align: center;
+  }
+
+  #design-selection > nav:nth-child(2) > ul:nth-child(1) > li > a:nth-child(1) {
+    color: blanchedalmond;
+  }
+
+  #design-selection > nav:nth-child(2) > ul:nth-child(1) > li > a:nth-child(2) {
+    color: black;
+  }
+
+  #design-selection > nav:nth-child(2) > ul:nth-child(1) > li {
+    margin-bottom: var(--spacing-s);
+  }
+
+  #design-selection
+    > nav:nth-child(2)
+    > ul:nth-child(1)
+    > li
+    > a:nth-child(1)::after {
+    content: "\a";
+    white-space: pre;
+  }
+
+  #design-archives > nav:nth-child(2) > ul:nth-child(1) {
+    text-align: center;
+    padding-left: 0px;
+  }
+
+  .next,
+  .viewall {
+    padding-bottom: var(--spacing-s);
+  }
+
+  .view-css,
+  .css-resources,
+  .zen-faq,
+  .zen-submit,
+  .zen-translations {
+    margin-bottom: var(--spacing-s);
+  }
+
+  #zen-resources {
+    padding-bottom: 30px;
+  }
+
+  #zen-resources > ul:nth-child(2) {
+    padding-left: 0px;
+    list-style-type: none;
+    text-align: center;
+  }
+
+  .sidebar {
+    background-color: #eda4bd;
+    /* color: white;  */
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* Ici, je cree la banniere de ma page web */
+  header {
+    display: flex;
+    justify-content: space-between;
+    background-color: wheat;
+    background-image: radial-gradient(#eda4bd, #c46bae);
+    padding-top: var(--spacing-s);
+
+    grid-row: 1;
+    grid-column: 1/ span 4;
+  }
+
+  header h1, header h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  #zen-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+    /* Une petite animation qui font rentrer les titres de la banniere de ma page */
+  @keyframes cssZenSlide {
+    from {left: -400px;}
+    to {left: 0px;}
+  }
+
+  /* Ici se fait l'implementation de l'animation */
+  header h1 {
+  color: white;
+  font-size: 60px;
+  margin-left: 30px;
+  position: relative;
+  animation: cssZenSlide 3s;
+  }
+
+  header h1::after {
+  position: absolute;
+  top: 10vh;
+  left: 42vw;
+  color: rgb(34, 12, 12);
+  text-shadow: 1px 2px rgb(44, 9, 9);
+  font-size: 10vw;
+  font-family: kanjiNoto;
+  border: 5px solid rgb(53, 10, 10);
+  padding-left: 30px;
+  padding-right: 30px;
+  background-image: url("/images/diego-passadori-e6frrz-kh-0-unsplash.jpg");
+  background-size: 330px auto;
+  content: "華";
+  }
+
+  @keyframes beautyOfCssSlide {
+    from {right: -400px;}
+    to {right: 0px;}
+  }
+
+  header h2 {
+  font-family: homemadeApple;
+  color: rgb(243, 222, 238);
+  font-size: var(--spacing-xl);
+  margin-right: 30px;
+  position: relative;
+  animation: beautyOfCssSlide 3s;
+  }
+
+  #zen-summary {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+    margin-left: 5vw;
+  }
+
+  #zen-summary > p:nth-child(1) {
+    margin-top: 0px;
+  }
+
+  #zen-summary > p:nth-child(2)::after {
+    margin-top: var(--spacing-l);
+    background-image: url("/images/masaaki-komori-_SbeCWYjwCQ-unsplash.jpg");
+    background-size: 100vw auto;
+    display: flex;
+    width: 45vw;
+    height: 200px;
+    border-radius: var(--spacing-s);
+    content: "";
+  }
+
+  /* Une petite addition pour les gens qui ne comprennent que la langue japonaise */
+  .explanation h3::after, .participation h3::after, .benefits h3::after, .requirements h3::after {
+    margin-left: var(--spacing-l);
+    font-family: kanjiNoto;
+    font-size: 2vw;
+    font-weight: lighter;
+    color: gray;
+  }
+  
+  .explanation h3::after {
+    content: "-   それで、これは何についてですか？";
+  }
+  
+  .participation h3::after {
+    content: "-   参加";
+  }
+  
+  .benefits h3::after {
+    content: "-   利点";
+  }
+  
+  .requirements h3::after {
+    content: "-   要件";
+  }
+
+  footer,
+  .preamble h3,
+  .explanation h3,
+  .participation h3,
+  .benefits h3,
+  .requirements h3,
+  h3.select,
+  h3.archives,
+  h3.resources {
+      font-family: indieFlower;
+      font-size: 40px;
+      margin-bottom: 0px;
+  }
+
+
+  #zen-preamble,
+  #zen-explanation,
+  #zen-participation,
+  #zen-benefits,
+  #zen-requirements,
+  footer {
+  padding: var(--body-padding);
+}
+
+.wrapper {
+  margin-top: var(--spacing-md);
+  padding: var(--body-padding);
+  display: flex;
+  background-color: #705045;
+  color: white;
+  justify-content: space-between;
+}
+
+  footer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    cursor: help;
+  }
+}
